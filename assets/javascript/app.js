@@ -34,3 +34,27 @@ $(document).ready(function() {
       });
       $("form")[0].reset();
   });
+  database.ref().on("child_added", function(childSnapshot) {
+      var nextArr;
+      var minAway;
+      // Chang year so first train comes before now
+      var firstTrainNew = moment(childSnapshot.val().firstTrain, "hh:mm").subtract(1, "years");
+      // Difference between the current and firstTrain
+      var diffTime = moment().diff(moment(firstTrainNew), "minutes");
+      var remainder = diffTime % childSnapshot.val().frequency;
+      // Minutes until next train
+      var minAway = childSnapshot.val().frequency - remainder;
+      // Next train time
+      var nextTrain = moment().add(minAway, "minutes");
+      nextTrain = moment(nextTrain).format("hh:mm");
+
+      $("#add-row").append("<tr><td>" + childSnapshot.val().name +
+              "</td><td>" + childSnapshot.val().destination +
+              "</td><td>" + childSnapshot.val().frequency +
+              "</td><td>" + nextTrain +
+              "</td><td>" + minAway + "</td></tr>");
+
+          // Handle the errors
+      }, function(errorObject) {
+          console.log("Errors handled: " + errorObject.code);
+  });
