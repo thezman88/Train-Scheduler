@@ -11,3 +11,10 @@ $(document).ready(function() {
       firebase.initializeApp(firebaseConfig);
 
     });
+    var database = firebase.database();
+
+        // Variables for the onClick event
+        var name;
+        var destination;
+        var firstTrain;
+        var frequency = 0;
