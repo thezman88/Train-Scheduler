@@ -10,3 +10,8 @@ $(document).ready(function() {
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
+
+      var name;
+      var destination;
+      var firstTrain;
+      var frequency = 0;
