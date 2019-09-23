@@ -1,6 +1,7 @@
 
 
       $(document).ready(function(){
+        // firebase setup
       var config = {
         apiKey: "AIzaSyCOYjvXoJnE0B9Fp9uWS8sOGvLDrXeL0d4",
         authDomain: "train-1abff.firebaseapp.com",
@@ -12,10 +13,8 @@
       };
       firebase.initializeApp(config);
 
-      // A variable to reference the database.
       var database = firebase.database();
 
-      // Variables for the onClick event
       var name;
       var destination;
       var firstTrain;
@@ -23,13 +22,13 @@
 
       $("#add-train").on("click", function() {
           event.preventDefault();
-          // Storing and retreiving new train data
+          // reciving new train data
           name = $("#train-name").val().trim();
           destination = $("#destination").val().trim();
           firstTrain = $("#first-train").val().trim();
           frequency = $("#frequency").val().trim();
 
-          // Pushing to database
+          // Push to database
           database.ref().push({
               name: name,
               destination: destination,

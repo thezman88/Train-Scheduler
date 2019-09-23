@@ -7,24 +7,23 @@
   <title>Train Scheduler</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Sigmar+One|Special+Elite" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="container text-center">
+  <div class="container-fluid text-center">
     <div class="jumbotron">
-      <h3>Train Scheduler</h3>
+      <h1>Train Scheduler</h1>
     </div>
   </div>
   <div class="container">
     <h3>Train Times</h3>
     <table class="table table-striped">
-      <thead class="thead-dark">
+      <thead class="thead thead-dark">
         <tr>
           <th>Train Name</th>
           <th>Destination</th>
@@ -41,6 +40,8 @@
     </table>
   </div>
   <div class="container border">
+
+
     <h3>Add Train</h3>
 
       <form>
@@ -67,10 +68,13 @@
 
         <button type="submit" id="add-train" class="btn btn-dark mb-2" id="addTrain">Submit</button>
       </form>
+
     </div>
 
 
-
+    <div class="fixedFooter bg-dark text-center text-white mt-5" style="position:; height: 50px; width: 100%;  bottom: 1vh;">
+      @2019
+    </div>
 
 
 
